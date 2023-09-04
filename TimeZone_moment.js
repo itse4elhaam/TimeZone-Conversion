@@ -5,8 +5,6 @@ function convertTutorTimeToStudentTime(tutorsDateTime, tutorsTimezoneValue, stud
     const studentsTimezone = moment.tz.zone(studentsTimezoneValue);
 
     if (tutorsTimezone && studentsTimezone) {
-        console.log("tutors date time");
-        console.log(tutorsDateTime);
         const studentsTime = moment(tutorsDateTime, 'HH:mm').tz(studentsTimezoneValue).format('HH:mm');
         return studentsTime;
     }
@@ -18,10 +16,10 @@ function convertTutorTimeToStudentTime(tutorsDateTime, tutorsTimezoneValue, stud
 }
 
 
-const tutorsTimezoneName = "America/Los_Angeles";
+const tutorsTimezoneName = "America/Detroit";
 const tutorsTimezoneOffset = -240; 
 
-const studentsTimezoneName = "America/Detroit";
+const studentsTimezoneName = "America/Los_Angeles";
 const studentsTimezoneOffset = -420; 
 
 const tutorsDateTimeByName = moment().tz(tutorsTimezoneName).set({ hour: 3, minute: 0 }).toDate();
@@ -32,8 +30,9 @@ console.log(studentsTimeFromNames);
 
 // DONE(BOTH WAYS):
 // LA =>  Detroit  
-
-
+// LA => Denver
+// LA => New_York
+// LA => Chicago
 
 
 // ALL TIMES ZONES 
